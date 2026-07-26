@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacciones | MediSafe</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app-frame">
+
+    <main class="app-content">
+
+        <!-- Encabezado -->
+
+        <div class="page-header">
+
+            <button class="btn-back" onclick="irA('dashboard.html')">
+                ←
+            </button>
+
+            <h2>Interacciones Medicamentosas</h2>
+
+        </div>
+
+        <!-- Información -->
+
+        <div class="alert-card warning">
+
+            <h3>⚠️ Posibles interacciones</h3>
+
+            <p>
+                Antes de combinar medicamentos, consulta siempre a un médico o farmacéutico.
+            </p>
+
+        </div>
+
+        <div class="alert-card">
+
+            <h3>💊 Paracetamol + Alcohol</h3>
+
+            <p>
+                Puede aumentar el riesgo de daño hepático.
+            </p>
+
+        </div>
+
+        <div class="alert-card">
+
+            <h3>💊 Ibuprofeno + Anticoagulantes</h3>
+
+            <p>
+                Puede incrementar el riesgo de sangrado.
+            </p>
+
+        </div>
+
+        <div class="alert-card">
+
+            <h3>💊 Amoxicilina + Anticonceptivos</h3>
+
+            <p>
+                Algunos antibióticos pueden disminuir la eficacia de ciertos anticonceptivos.
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            onclick="mostrarAlerta('Información','Ante cualquier duda consulte a un profesional de salud.')">
+
+            Ver recomendación
+
+        </button>
+
+    </main>
+
+    <!-- Barra inferior -->
+
+    <nav class="bottom-nav">
+
+        <div class="nav-item" onclick="irA('dashboard.html')">
+            <div class="nav-icon">🏠</div>
+            <span>Inicio</span>
+        </div>
+
+        <div class="nav-item" onclick="irA('medicamentos.html')">
+            <div class="nav-icon">💊</div>
+            <span>Medicamentos</span>
+        </div>
+
+        <div class="nav-item active">
+            <div class="nav-icon">⚠️</div>
+            <span>Interacciones</span>
+        </div>
+
+        <div class="nav-item" onclick="irA('información.html')">
+            <div class="nav-icon">ℹ️</div>
+            <span>Información</span>
+        </div>
+
+    </nav>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
