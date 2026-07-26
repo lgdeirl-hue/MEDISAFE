@@ -8,106 +8,63 @@
 
 <title>Dashboard | MediSafe</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
-
 
 <div class="app-frame">
 
-
 <main class="app-content">
 
-
-
-<!-- BIENVENIDA -->
-
 <div class="greeting-card">
-
 
 <h2>
 ¡Bienvenido, <span id="nombreUsuario">Usuario</span>! 👋
 </h2>
 
-
 <p>
 Administra tus medicamentos de forma segura y organizada.
 </p>
 
-
-
 <div class="adherence">
-
 
 <span>
 Adherencia al tratamiento
 </span>
 
-
-
 <div class="adherence-bar">
-
 <span style="width:80%"></span>
+</div>
+
+<strong>80%</strong>
 
 </div>
 
-
-<strong>
-80%
-</strong>
-
-
-
 </div>
-
-
-
-</div>
-
-
-
-
-
-<!-- PRÓXIMAS TOMAS -->
 
 <div class="proximos-medicamentos">
-
 
 <h3 class="section-title">
 💊 Próximas tomas
 </h3>
 
-
 <div id="dashboardMedicamentos">
-
 
 <p>
 No tienes medicamentos registrados.
 </p>
 
-
 </div>
 
-
 </div>
-
-
-
-
 
 <h3 class="section-title">
 Menú Principal
 </h3>
 
-
-
-
 <div class="menu-grid">
-
-
 
 <div class="menu-card" onclick="irA('medicamentos.html')">
 
@@ -119,133 +76,81 @@ Menú Principal
 Mis medicamentos
 </span>
 
-
 <p class="desc">
 Consulta tus tratamientos registrados.
 </p>
 
-
 </div>
 
-
-
-
-
-
-<div class="menu-card" onclick="irA('medicamentos.html')">
-
+<div class="menu-card" onclick="irA('agregar.html')">
 
 <div class="icon-badge blue">
 ➕
 </div>
 
-
 <span class="label">
 Agregar medicamento
 </span>
-
 
 <p class="desc">
 Registra un nuevo medicamento.
 </p>
 
-
 </div>
 
-
-
-
-
-
 <div class="menu-card" onclick="irA('recordatorios.html')">
-
 
 <div class="icon-badge warning">
 ⏰
 </div>
 
-
 <span class="label">
 Recordatorios
 </span>
-
 
 <p class="desc">
 Consulta horarios de tus dosis.
 </p>
 
-
 </div>
 
-
-
-
-
-
-
 <div class="menu-card" onclick="irA('interacciones.html')">
-
 
 <div class="icon-badge red">
 ⚠️
 </div>
 
-
 <span class="label">
 Interacciones
 </span>
-
 
 <p class="desc">
 Consulta posibles riesgos.
 </p>
 
-
 </div>
 
-
-
-
-
-
-
 <div class="menu-card" onclick="irA('informacion.html')">
-
 
 <div class="icon-badge blue">
 ℹ️
 </div>
 
-
 <span class="label">
 Información
 </span>
-
 
 <p class="desc">
 Información sobre medicamentos.
 </p>
 
-
 </div>
 
-
-
 </div>
-
-
 
 </main>
 
-
-
-
-
-
-
 <nav class="bottom-nav">
-
-
 
 <div class="nav-item active">
 
@@ -253,15 +158,9 @@ Información sobre medicamentos.
 🏠
 </div>
 
-<span>
-Inicio
-</span>
+<span>Inicio</span>
 
 </div>
-
-
-
-
 
 <div class="nav-item" onclick="irA('medicamentos.html')">
 
@@ -269,16 +168,9 @@ Inicio
 💊
 </div>
 
-<span>
-Medicamentos
-</span>
+<span>Medicamentos</span>
 
 </div>
-
-
-
-
-
 
 <div class="nav-item" onclick="irA('recordatorios.html')">
 
@@ -286,16 +178,9 @@ Medicamentos
 ⏰
 </div>
 
-<span>
-Recordatorios
-</span>
+<span>Recordatorios</span>
 
 </div>
-
-
-
-
-
 
 <div class="nav-item" onclick="irA('informacion.html')">
 
@@ -303,26 +188,15 @@ Recordatorios
 ℹ️
 </div>
 
-<span>
-Información
-</span>
+<span>Información</span>
 
 </div>
-
-
 
 </nav>
 
-
-
-
 </div>
 
-
-
-<script src="js/script.js"></script>
-
+<script src="script.js"></script>
 
 </body>
-
 </html>
