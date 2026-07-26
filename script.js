@@ -3,12 +3,17 @@
 // =====================================
 
 function irA(pagina){
-
     window.location.href = pagina;
-
 }
 
 
+// =====================================
+// BOTÓN COMENZAR
+// =====================================
+
+function comenzar(){
+    window.location.href = "registro.html";
+}
 
 
 
@@ -18,69 +23,49 @@ function irA(pagina){
 
 function registrarUsuario(){
 
-
-    let nombre = document.getElementById("nombre")?.value;
-
-    let correo = document.getElementById("correo")?.value;
-
-    let password = document.getElementById("password")?.value;
-
-    let confirmar = document.getElementById("confirmar")?.value;
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let password = document.getElementById("password").value;
+    let confirmar = document.getElementById("confirmar").value;
 
 
-
-    if(!nombre || !correo || !password){
+    if(nombre === "" || correo === "" || password === "" || confirmar === ""){
 
         alert("Complete todos los campos");
-
         return;
 
     }
-
 
 
     if(password !== confirmar){
 
         alert("Las contraseñas no coinciden");
-
         return;
 
     }
 
 
-
     let usuario = {
 
         nombre: nombre,
-
         correo: correo,
-
         password: password
 
     };
 
 
-
     localStorage.setItem(
-
         "usuario",
-
         JSON.stringify(usuario)
-
     );
-
 
 
     alert("Cuenta creada correctamente");
 
 
-    irA("login.html");
-
+    window.location.href = "login.html";
 
 }
-
-
-
 
 
 
@@ -88,35 +73,24 @@ function registrarUsuario(){
 // LOGIN
 // =====================================
 
-
 function iniciarSesion(){
-
 
     let correo = document.getElementById("correo").value;
 
     let password = document.getElementById("password").value;
 
 
-
     let usuario = JSON.parse(
-
         localStorage.getItem("usuario")
-
     );
-
-
 
 
     if(!usuario){
 
         alert("No existe una cuenta registrada");
-
         return;
 
     }
-
-
-
 
 
     if(
@@ -124,32 +98,22 @@ function iniciarSesion(){
         password === usuario.password
     ){
 
-
         localStorage.setItem(
             "sesion",
             "activo"
         );
 
 
-        irA("dashboard.html");
+        window.location.href = "dashboard.html";
 
 
     }else{
 
-
         alert("Correo o contraseña incorrectos");
-
 
     }
 
-
-
 }
-
-
-
-
-
 
 
 
@@ -157,108 +121,47 @@ function iniciarSesion(){
 // GUARDAR MEDICAMENTO
 // =====================================
 
-
 function guardarMedicamento(){
 
+    let nombre = document.getElementById("nombreMedicamento").value;
+    let dosis = document.getElementById("dosisMedicamento").value;
+    let hora = document.getElementById("horaMedicamento").value;
 
 
-    let nombre = document.getElementById(
-        "nombreMedicamento"
-    ).value;
+    if(nombre === "" || dosis === "" || hora === ""){
 
-
-
-    let dosis = document.getElementById(
-        "dosisMedicamento"
-    ).value;
-
-
-
-    let hora = document.getElementById(
-        "horaMedicamento"
-    ).value;
-
-
-
-
-
-    if(!nombre || !dosis || !hora){
-
-
-        alert(
-            "Complete todos los datos del medicamento"
-        );
-
-
+        alert("Complete todos los datos del medicamento");
         return;
-
 
     }
 
 
-
-
-
-
     let medicamentos = JSON.parse(
-
         localStorage.getItem("medicamentos")
-
     ) || [];
-
-
-
-
-
 
 
     medicamentos.push({
 
-
         nombre:nombre,
-
         dosis:dosis,
-
         hora:hora
-
 
     });
 
 
-
-
-
-
-
     localStorage.setItem(
-
         "medicamentos",
-
         JSON.stringify(medicamentos)
-
     );
 
 
+    alert("Medicamento agregado correctamente");
 
 
-
-
-    alert(
-        "Medicamento agregado correctamente"
-    );
-
-
-
-    irA("medicamentos.html");
-
-
+    window.location.href = "medicamentos.html";
 
 }
-
-
-
-
-
 
 
 
@@ -266,113 +169,62 @@ function guardarMedicamento(){
 // MOSTRAR MEDICAMENTOS
 // =====================================
 
-
 function mostrarMedicamentos(){
 
-
-
-    let lista = document.getElementById(
-        "listaMedicamentos"
-    );
-
+    let lista = document.getElementById("listaMedicamentos");
 
 
     if(!lista){
-
         return;
-
     }
 
 
-
-
-
     let medicamentos = JSON.parse(
-
         localStorage.getItem("medicamentos")
-
     ) || [];
-
-
-
 
 
     lista.innerHTML = "";
 
 
-
-
-
-
     if(medicamentos.length === 0){
 
-
-        lista.innerHTML = `
-
-        <p>
-        No tienes medicamentos registrados.
-        </p>
-
-        `;
-
+        lista.innerHTML = 
+        "<p>No tienes medicamentos registrados.</p>";
 
         return;
 
-
     }
-
-
-
-
 
 
     medicamentos.forEach(function(medicamento){
 
 
-
         lista.innerHTML += `
 
-
         <div class="card-medicamento">
-
 
             <h3>
             💊 ${medicamento.nombre}
             </h3>
 
-
             <p>
-            Dosis:
-            ${medicamento.dosis}
+            Dosis: ${medicamento.dosis}
             </p>
 
-
             <p>
-            ⏰ Hora:
-            ${medicamento.hora}
+            ⏰ Hora: ${medicamento.hora}
             </p>
-
-
 
         </div>
 
-
         `;
-
 
 
     });
 
 
-
-
-
 }
-
-
-
-
-
 
 
 
@@ -380,43 +232,27 @@ function mostrarMedicamentos(){
 // DASHBOARD
 // =====================================
 
-
 function cargarDashboard(){
 
-
-
-    let nombre = document.getElementById(
-        "nombreUsuario"
-    );
-
+    let nombreUsuario =
+    document.getElementById("nombreUsuario");
 
 
     let usuario = JSON.parse(
-
         localStorage.getItem("usuario")
-
     );
 
 
+    if(nombreUsuario && usuario){
 
-
-
-    if(nombre && usuario){
-
-
-        nombre.textContent =
-        usuario.nombre;
-
+        nombreUsuario.textContent = usuario.nombre;
 
     }
 
 
 
-
-    let panel = document.getElementById(
-        "dashboardMedicamentos"
-    );
-
+    let panel =
+    document.getElementById("dashboardMedicamentos");
 
 
     if(!panel){
@@ -426,76 +262,47 @@ function cargarDashboard(){
     }
 
 
-
-
-
     let medicamentos = JSON.parse(
-
         localStorage.getItem("medicamentos")
-
     ) || [];
 
 
+    panel.innerHTML = "";
 
 
-
-    panel.innerHTML="";
-
-
-
-
-
-    if(medicamentos.length===0){
-
+    if(medicamentos.length === 0){
 
         panel.innerHTML =
         "<p>No tienes medicamentos próximos.</p>";
 
         return;
 
-
     }
-
-
-
 
 
     medicamentos.forEach(function(medicamento){
 
 
-
         panel.innerHTML += `
-
 
         <div class="card-medicamento">
 
+            <h3>
+            💊 ${medicamento.nombre}
+            </h3>
 
-        <h3>
-        💊 ${medicamento.nombre}
-        </h3>
-
-
-        <p>
-        ${medicamento.hora}
-        </p>
-
+            <p>
+            ⏰ ${medicamento.hora}
+            </p>
 
         </div>
-
 
         `;
 
 
     });
 
-
-
-
 }
-
-
-
-
 
 
 
@@ -503,15 +310,10 @@ function cargarDashboard(){
 // RECORDATORIOS
 // =====================================
 
-
 function cargarRecordatorios(){
 
-
-
-    let lista = document.getElementById(
-        "listaRecordatorios"
-    );
-
+    let lista =
+    document.getElementById("listaRecordatorios");
 
 
     if(!lista){
@@ -521,85 +323,48 @@ function cargarRecordatorios(){
     }
 
 
-
-
-
-
     let medicamentos = JSON.parse(
-
         localStorage.getItem("medicamentos")
-
     ) || [];
 
 
+    lista.innerHTML = "";
 
 
+    if(medicamentos.length === 0){
 
-
-    lista.innerHTML="";
-
-
-
-
-
-    if(medicamentos.length===0){
-
-
-        lista.innerHTML = `
-
-        <p>
-        No tienes recordatorios registrados.
-        </p>
-
-        `;
-
+        lista.innerHTML =
+        "<p>No tienes recordatorios registrados.</p>";
 
         return;
 
-
     }
-
-
-
-
-
 
 
     medicamentos.forEach(function(medicamento){
 
 
-
         lista.innerHTML += `
 
-
         <div class="card-medicamento">
-
 
             <h3>
             ⏰ ${medicamento.nombre}
             </h3>
 
-
             <p>
-            Dosis:
-            ${medicamento.dosis}
+            Dosis: ${medicamento.dosis}
             </p>
 
-
             <p>
-            Hora:
-            ${medicamento.hora}
+            Hora: ${medicamento.hora}
             </p>
 
-
             <p>
-            Estado:
-            🟡 Pendiente
+            Estado: 🟡 Pendiente
             </p>
-
 
         </div>
-
 
         `;
 
@@ -607,13 +372,7 @@ function cargarRecordatorios(){
     });
 
 
-
 }
-
-
-
-
-
 
 
 
@@ -621,99 +380,49 @@ function cargarRecordatorios(){
 // BUSCADOR
 // =====================================
 
-
 function buscarMedicamento(){
 
+    let texto =
+    document.getElementById("buscar").value.toLowerCase();
 
 
-    let texto = document.getElementById(
-        "buscar"
-    ).value.toLowerCase();
-
-
-
-    let tarjetas = document.querySelectorAll(
-        ".card-medicamento"
-    );
-
+    let tarjetas =
+    document.querySelectorAll(".card-medicamento");
 
 
     tarjetas.forEach(function(card){
 
 
-        if(
-            card.textContent
-            .toLowerCase()
-            .includes(texto)
-        ){
+        if(card.textContent.toLowerCase().includes(texto)){
 
-
-            card.style.display="block";
-
+            card.style.display = "block";
 
         }else{
 
-
-            card.style.display="none";
-
+            card.style.display = "none";
 
         }
-
 
 
     });
 
 
-
 }
 
 
 
-
-
-
-
 // =====================================
-// INFORMACIÓN
+// CARGAR FUNCIONES AL ABRIR PÁGINA
 // =====================================
-
-
-function mostrarAlerta(titulo,mensaje){
-
-
-    alert(
-        titulo +
-        "\n\n" +
-        mensaje
-    );
-
-
-}
-
-
-
-
-
-
-
-// =====================================
-// CARGA AUTOMÁTICA
-// =====================================
-
 
 document.addEventListener(
 "DOMContentLoaded",
 function(){
 
-
     mostrarMedicamentos();
-
 
     cargarDashboard();
 
-
     cargarRecordatorios();
-
-
 
 });
