@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | MediSafe</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app-frame">
+
+    <main class="app-content no-nav">
+
+        <div class="auth-header">
+
+            <div class="logo-mark-sm">
+                💊
+            </div>
+
+            <h2>Bienvenido</h2>
+
+            <p>
+                Inicia sesión para administrar tus medicamentos de forma segura.
+            </p>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="correo">Correo electrónico</label>
+
+            <input
+                type="email"
+                id="correo"
+                placeholder="ejemplo@correo.com">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="password">Contraseña</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Ingrese su contraseña">
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            onclick="iniciarSesion()">
+
+            Ingresar
+
+        </button>
+
+        <button
+            class="btn btn-outline mt-16"
+            onclick="irA('index.html')">
+
+            Volver
+
+        </button>
+
+        <div class="auth-footer">
+
+            ¿No tienes una cuenta?
+
+            <br><br>
+
+            <button
+                class="btn btn-ghost"
+                onclick="irA('registro.html')">
+
+                Crear cuenta
+
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información | MediSafe</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app-frame">
+
+    <main class="app-content">
+
+        <!-- Encabezado -->
+
+        <div class="page-header">
+
+            <button class="btn-back" onclick="irA('dashboard.html')">
+                ←
+            </button>
+
+            <h2>Información de Medicamentos</h2>
+
+        </div>
+
+        <!-- Tarjeta 1 -->
+
+        <div class="info-card">
+
+            <h3>💊 ¿Qué es un medicamento?</h3>
+
+            <p>
+                Un medicamento es una sustancia utilizada para prevenir,
+                aliviar o tratar enfermedades. Debe utilizarse siempre bajo
+                las indicaciones de un profesional de la salud.
+            </p>
+
+        </div>
+
+        <!-- Tarjeta 2 -->
+
+        <div class="info-card">
+
+            <h3>⏰ Importancia de respetar los horarios</h3>
+
+            <p>
+                Tomar los medicamentos a la hora indicada ayuda a mantener
+                concentraciones adecuadas en el organismo y mejora la eficacia
+                del tratamiento.
+            </p>
+
+        </div>
+
+        <!-- Tarjeta 3 -->
+
+        <div class="info-card">
+
+            <h3>⚠️ Evita la automedicación</h3>
+
+            <p>
+                No consumas medicamentos sin la recomendación de un médico o
+                farmacéutico. La automedicación puede producir efectos
+                adversos e interacciones peligrosas.
+            </p>
+
+        </div>
+
+        <!-- Tarjeta 4 -->
+
+        <div class="info-card">
+
+            <h3>🌡️ Conservación</h3>
+
+            <p>
+                Guarda los medicamentos en un lugar fresco, seco y fuera del
+                alcance de los niños. Revisa siempre la fecha de vencimiento.
+            </p>
+
+        </div>
+
+        <!-- Botón -->
+
+        <button
+            class="btn btn-primary"
+            onclick="mostrarAlerta('Consejo','Sigue siempre las indicaciones de tu médico y no suspendas un tratamiento sin consultarlo.')">
+
+            Ver consejo
+
+        </button>
+
+    </main>
+
+    <!-- Barra inferior -->
+
+    <nav class="bottom-nav">
+
+        <div class="nav-item" onclick="irA('dashboard.html')">
+            <div class="nav-icon">🏠</div>
+            <span>Inicio</span>
+        </div>
+
+        <div class="nav-item" onclick="irA('medicamentos.html')">
+            <div class="nav-icon">💊</div>
+            <span>Medicamentos</span>
+        </div>
+
+        <div class="nav-item" onclick="irA('recordatorios.html')">
+            <div class="nav-icon">⏰</div>
+            <span>Recordatorios</span>
+        </div>
+
+        <div class="nav-item active">
+            <div class="nav-icon">ℹ️</div>
+            <span>Información</span>
+        </div>
+
+    </nav>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
