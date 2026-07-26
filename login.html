@@ -2,92 +2,195 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión | MediSafe</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Login | MediSafe</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
 <div class="app-frame">
+
 
     <main class="app-content no-nav">
 
+
         <div class="auth-header">
 
+
             <div class="logo-mark-sm">
+
                 💊
+
             </div>
 
-            <h2>Bienvenido</h2>
+
+
+            <h2>
+
+                Bienvenido a MediSafe
+
+            </h2>
+
+
 
             <p>
-                Inicia sesión para administrar tus medicamentos de forma segura.
+
+                Ingresa para administrar tus medicamentos de forma segura.
+
             </p>
 
+
         </div>
+
+
+
+
 
         <div class="form-group">
 
-            <label for="correo">Correo electrónico</label>
+
+            <label for="correo">
+
+                Correo electrónico
+
+            </label>
+
+
 
             <input
+
                 type="email"
+
                 id="correo"
+
                 placeholder="ejemplo@correo.com">
 
+
         </div>
+
+
+
+
+
+
 
         <div class="form-group">
 
-            <label for="password">Contraseña</label>
+
+            <label for="password">
+
+                Contraseña
+
+            </label>
+
+
 
             <input
+
                 type="password"
+
                 id="password"
+
                 placeholder="Ingrese su contraseña">
+
 
         </div>
 
+
+
+
+
+
+
         <button
+
             class="btn btn-primary"
+
             onclick="iniciarSesion()">
+
 
             Ingresar
 
+
         </button>
+
+
+
+
+
+
+
 
         <button
+
             class="btn btn-outline mt-16"
+
             onclick="irA('index.html')">
 
-            Volver
+
+            Volver al inicio
+
 
         </button>
+
+
+
+
+
+
 
         <div class="auth-footer">
 
-            ¿No tienes una cuenta?
 
-            <br><br>
+            <p>
+
+                ¿No tienes una cuenta?
+
+            </p>
+
+
 
             <button
+
                 class="btn btn-ghost"
+
                 onclick="irA('registro.html')">
+
 
                 Crear cuenta
 
+
             </button>
+
+
 
         </div>
 
+
+
+
+
+
     </main>
+
 
 </div>
 
-<script src="js/script.js"></script>
+
+
+
+
+<script src="script.js?v=20"></script>
+
 
 </body>
+
 </html>
